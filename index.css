@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("./fonts/Poppins-SemiBold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-Light.ttf");
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  margin: 0;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  background-image: url("./images/bg-intro-desktop.png");
+  background-color: #ff7978;
+  background-size: contain;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  color: white;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+
+  margin-left: calc(5em + 5vw);
+  margin-right: calc(5em + 5vw);
+}
+
+h1 {
+  font-family: "PoppinsBold";
+  /* font-size: calc(1.4em + 1.4vw); */
+}
