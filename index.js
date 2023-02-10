@@ -14,89 +14,70 @@ let lastNameValue = "";
 let emailValue = "";
 let passwordValue = "";
 
-const handleChange = (e) => {
-  if (e.target.matches("#name")) {
-    nameValue = e.target.value;
-  } else if (e.target.matches("#lastName")) {
-    lastNameValue = e.target.value;
-  } else if (e.target.matches("#email")) {
-    emailValue = e.target.value;
-  } else if (e.target.matches("#password")) {
-    passwordValue = e.target.value;
+const handleChangeForm = (e) => {
+  switch (true) {
+    case e.target.matches("#name"):
+      nameValue = e.target.value;
+      break;
+    case e.target.matches("#lastName"):
+      lastNameValue = e.target.value;
+      break;
+    case e.target.matches("#email"):
+      emailValue = e.target.value;
+      break;
+    case e.target.matches("#password"):
+      passwordValue = e.target.value;
+      break;
+    default:
+      break;
   }
+};
+
+const showErrorMessage = (
+  nameValidation,
+  lastnameValidation,
+  emailValidation,
+  passwordValidation
+) => {
+  nameError.style.display = `${nameValidation ? "initial" : "none"}`;
+  nameMessage.style.display = `${nameValidation ? "block" : "none"}`;
+
+  lastNameError.style.display = `${lastnameValidation ? "initial" : "none"}`;
+  lastNameMessage.style.display = `${lastnameValidation ? "block" : "none"}`;
+
+  emailError.style.display = `${emailValidation ? "initial" : "none"}`;
+  emailMessage.style.display = `${emailValidation ? "block" : "none"}`;
+
+  passwordError.style.display = `${passwordValidation ? "initial" : "none"}`;
+  passwordMessage.style.display = `${passwordValidation ? "block" : "none"}`;
 };
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  if (
-    nameValue == "" &&
-    lastNameValue == "" &&
-    emailValue == "" &&
-    passwordValue == ""
-  ) {
-    nameError.style.display = "initial";
-    nameMessage.style.display = "block";
-
-    lastNameError.style.display = "initial";
-    lastNameMessage.style.display = "block";
-
-    emailError.style.display = "initial";
-    emailMessage.style.display = "block";
-
-    passwordError.style.display = "initial";
-    passwordMessage.style.display = "block";
-  } else if (nameValue == "") {
-    nameError.style.display = "initial";
-    nameMessage.style.display = "block";
-
-    lastNameError.style.display = "none";
-    lastNameMessage.style.display = "none";
-
-    emailError.style.display = "none";
-    emailMessage.style.display = "none";
-
-    passwordError.style.display = "none";
-    passwordMessage.style.display = "none";
-  } else if (lastNameValue == "") {
-    lastNameError.style.display = "initial";
-    lastNameMessage.style.display = "block";
-
-    nameError.style.display = "none";
-    nameMessage.style.display = "none";
-
-    emailError.style.display = "none";
-    emailMessage.style.display = "none";
-
-    passwordError.style.display = "none";
-    passwordMessage.style.display = "none";
-  } else if (emailValue == "") {
-    emailError.style.display = "initial";
-    emailMessage.style.display = "block";
-
-    lastNameError.style.display = "none";
-    lastNameMessage.style.display = "none";
-
-    nameError.style.display = "none";
-    nameMessage.style.display = "none";
-
-    passwordError.style.display = "none";
-    passwordMessage.style.display = "none";
-  } else if (passwordValue == "") {
-    passwordError.style.display = "initial";
-    passwordMessage.style.display = "block";
-
-    lastNameError.style.display = "none";
-    lastNameMessage.style.display = "none";
-
-    emailError.style.display = "none";
-    emailMessage.style.display = "none";
-
-    nameError.style.display = "none";
-    nameMessage.style.display = "none";
-  } else {
-    alert("¡success!");
+  switch (true) {
+    case nameValue == "" &&
+      lastNameValue == "" &&
+      emailValue == "" &&
+      passwordValue == "":
+      showErrorMessage(true, true, true, true);
+      break;
+    case nameValue == "":
+      showErrorMessage(true, false, false, false);
+      break;
+    case lastNameValue == "":
+      showErrorMessage(false, true, false, false);
+      break;
+    case emailValue == "":
+      showErrorMessage(false, false, true, false);
+      break;
+    case passwordValue == "":
+      showErrorMessage(false, false, false, true);
+      break;
+    default:
+      alert("¡success!");
+      break;
   }
 };
 
-document.addEventListener("change", handleChange);
+document.addEventListener("change", handleChangeForm);
 form.addEventListener("submit", handleSubmit);
