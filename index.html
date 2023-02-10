@@ -34,10 +34,74 @@
         </div>
         <div class="form-container">
           <form action="#">
-            <div><input type="text" placeholder="First Name" /></div>
-            <div><input type="text" placeholder="Last Name" /></div>
-            <div><input type="email" placeholder="Email" /></div>
-            <div><input type="password" placeholder="Password" /></div>
+            <div>
+              <input id="name" type="text" placeholder="First Name" />
+              <svg
+                id="name-error"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <circle fill="#FF7979" cx="12" cy="12" r="12" />
+                  <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+                  <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+                </g>
+              </svg>
+
+              <p id="name-message">First name cannot be empty</p>
+            </div>
+            <div>
+              <input id="lastName" type="text" placeholder="Last Name" />
+              <svg
+                id="lastName-error"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <circle fill="#FF7979" cx="12" cy="12" r="12" />
+                  <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+                  <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+                </g>
+              </svg>
+
+              <p id="lastName-message">Last name cannot be empty</p>
+            </div>
+            <div>
+              <input id="email" type="email" placeholder="Email" />
+
+              <svg
+                id="email-error"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <circle fill="#FF7979" cx="12" cy="12" r="12" />
+                  <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+                  <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+                </g>
+              </svg>
+
+              <p id="email-message">Looks like this is not an email</p>
+            </div>
+            <div>
+              <input id="password" type="password" placeholder="Password" />
+              <svg
+                id="password-error"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <circle fill="#FF7979" cx="12" cy="12" r="12" />
+                  <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+                  <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+                </g>
+              </svg>
+              <p id="password-message">Password cannot be empty</p>
+            </div>
 
             <button type="submit">CLAIN YOUR FREE TRIAL</button>
             <div class="terms">
@@ -50,5 +114,7 @@
         </div>
       </div>
     </main>
+
+    <script src="index.js"></script>
   </body>
 </html>

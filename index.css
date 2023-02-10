@@ -90,6 +90,14 @@ p {
   margin-top: 0;
 }
 
+svg {
+  display: none;
+
+  position: absolute;
+  margin-top: 0.6em;
+  margin-left: -2.5em;
+}
+
 .alert {
   background-color: #5d54a3;
   box-shadow: 0px 8px 1px #00000022;
@@ -125,6 +133,28 @@ p {
 input:focus {
   outline: none;
   border: 0.5px solid #8a859d;
+}
+
+.alert div:nth-child(1) {
+  margin-right: calc(0.2em + 0.2vw);
+}
+
+form p {
+  font-size: calc(0.5em + 0.5vw);
+}
+
+#name-message,
+#lastName-message,
+#email-message,
+#password-message {
+  display: none;
+
+  color: #ff7978;
+  text-align: end;
+  font-style: italic;
+  font-size: calc(0.4em + 0.4vw);
+
+  margin-top: -1.5em;
 }
 
 @media (max-width: 1440px) {
@@ -260,5 +290,9 @@ input:focus {
 
   .alert {
     height: calc(3.5em + 3.5vw);
+  }
+
+  form p {
+    font-size: calc(0.8em + 0.8vw);
   }
 }
